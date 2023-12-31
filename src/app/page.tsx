@@ -1,7 +1,3 @@
 export default function HomePage() {
-  return (
-    <main>
-      Iniciando o projeto
-    </main>
-  );
+  return <main className="px-5">Iniciando o projeto</main>;
 }
