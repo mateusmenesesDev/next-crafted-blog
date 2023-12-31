@@ -38,13 +38,13 @@ export default function ArticleCard({
           and impress your managers?
         </p>
         <div className="mt-3 flex gap-[0.62rem] lg:mt-6">
-          <span className="bg-[#F9F5FF] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#6941C6]">
+          <span className="rounded-2xl bg-[#F9F5FF] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#6941C6]">
             Design
           </span>
-          <span className="bg-[#EEF4FF] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#3538CD]">
+          <span className="rounded-2xl bg-[#EEF4FF] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#3538CD]">
             Research
           </span>
-          <span className="bg-[#FDF2FA] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#C11574]">
+          <span className="rounded-2xl bg-[#FDF2FA] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#C11574]">
             Presentation
           </span>
         </div>
