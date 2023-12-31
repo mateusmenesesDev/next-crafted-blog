@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <body
-        className={` font-sans ${inter.variable} bg-base text-text dark:bg-base-dark dark:text-white`}
+        className={` font-sans ${inter.variable} bg-base-white text-text dark:bg-base-dark dark:text-white`}
       >
         <Header />
         {children}

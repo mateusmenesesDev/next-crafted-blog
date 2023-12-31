@@ -8,7 +8,7 @@ export default {
     colors: {
       white: "#FFFFFF",
       black: "#000000",
-      base: "#F5F5F5",
+      "base-white": "#F5F5F5",
       text: "#1A1A1A",
       accent: "#6941C6",
       secondary: "#667085",
