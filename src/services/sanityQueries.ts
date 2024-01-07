@@ -37,4 +37,18 @@ export const sanityQueries = {
   `);
     return posts;
   },
+
+  getBySlug: async (slug: string) => {
+    const post: Post[] = await makeSanityRequest(
+      groq`
+      *[_type == "post" && slug.current == $slug] {
+        ...,
+        "categories": categories[]->,
+        "author": author->,
+      }
+    `,
+      slug,
+    );
+    return post[0];
+  },
 };

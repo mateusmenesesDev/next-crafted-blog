@@ -11,18 +11,13 @@ export default async function HomePage() {
           Posts recentes
         </span>
         <div className="mb-14 flex flex-col gap-8 lg:gap-x-8 lg:gap-y-2 xl:grid xl:grid-cols-2">
-          <ArticleCard post={posts[0]!} className="row-span-2" />
           {posts.map(
             (post, index) =>
-              index > 0 &&
-              index < 3 && (
+              index < 4 && (
                 <ArticleCard post={post} key={post._id} variant="horizontal" />
               ),
           )}
         </div>
-        {posts.length > 3 && (
-          <ArticleCard post={posts[3]!} variant="horizontal" />
-        )}
       </section>
       <section className="mt-16">
         <span className="mb-8 block text-2xl font-semibold">
