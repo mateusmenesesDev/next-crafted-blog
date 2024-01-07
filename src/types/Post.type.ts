@@ -9,7 +9,7 @@ export type Post = {
   slug: Slug;
   mainImage: Image;
   categories: Category[];
-  publishedAt: Date;
+  publishedAt: string;
   description: string;
   body: Block[];
 } & BaseSanityType;

@@ -1,25 +1,29 @@
 import Image from "next/image";
-import postImg from "/public/dumb/dumb-1.jpeg";
 import cn from "~/utils/twMerge";
+import { type Post } from "~/types/Post.type";
+import { urlForImage } from "../../sanity/lib/image";
 
 type Props = {
   variant?: "horizontal" | "vertical";
   className?: string;
+  post: Post;
 };
 
 export default function ArticleCard({
   variant = "vertical",
   className,
+  post,
 }: Props) {
   return (
     <article
       className={cn({ "gap-6 lg:flex": variant === "horizontal" }, className)}
     >
-      <div className="flex-1">
+      <div className="relative h-56 flex-1 md:h-72">
         <Image
-          src={postImg}
+          src={urlForImage(post.mainImage)}
           alt="Imagem do post"
-          className={cn("h-full object-cover md:max-h-[14.25rem]")}
+          fill
+          className={cn("object-cover")}
         />
       </div>
       <div
@@ -28,23 +32,19 @@ export default function ArticleCard({
         })}
       >
         <span className="mb-3 block text-sm font-semibold text-accent">
-          Mateus Meneses - 31/12/23
+          {post.author.name} - {new Date(post.publishedAt).toLocaleDateString()}
         </span>
-        <h2 className="mb-3 text-xl font-semibold">UX review presentations</h2>
-        <p className="text-base text-secondary">
-          How do you create compelling presentations that wow your colleagues
-          and impress your managers?
-        </p>
+        <h2 className="mb-3 text-xl font-semibold">{post.title}</h2>
+        <p className="text-base text-secondary">{post.description}</p>
         <div className="mt-3 flex gap-[0.62rem] lg:mt-6">
-          <span className="rounded-2xl bg-[#F9F5FF] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#6941C6]">
-            Design
-          </span>
-          <span className="rounded-2xl bg-[#EEF4FF] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#3538CD]">
-            Research
-          </span>
-          <span className="rounded-2xl bg-[#FDF2FA] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#C11574]">
-            Presentation
-          </span>
+          {post.categories.map((category) => (
+            <span
+              key={category._id}
+              className="rounded-2xl bg-[#F9F5FF] px-[0.62rem] py-[0.12rem] text-sm font-medium leading-[1.25rem] text-[#6941C6]"
+            >
+              {category.title}
+            </span>
+          ))}
         </div>
       </div>
     </article>

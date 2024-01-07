@@ -2,7 +2,7 @@
 import { type SanitySchemas } from "./SanitySchemas.type";
 
 export type BaseSanityType = {
-  _createdAt: Date;
+  _createdAt: string;
   _id: string;
   _rev: string;
   _type: SanitySchemas;

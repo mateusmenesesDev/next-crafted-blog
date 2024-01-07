@@ -31,8 +31,8 @@ export const sanityQueries = {
     const posts: Post[] = await makeSanityRequest(groq`
     *[_type == "post"] | order(publishedAt desc) {
       ...,
-      "categories": categories[]->title,
-      "author": author->name,
+      "categories": categories[]->,
+      "author": author->,
     }
   `);
     return posts;
