@@ -1,6 +1,9 @@
 import ArticleCard from "~/components/ArticleCard";
+import { sanityQueries } from "~/services/sanityQueries";
+import { type Post } from "~/types/Post.type";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const posts: Post[] = await sanityQueries.allPosts();
   return (
     <main className="m-auto max-w-[110rem] px-5">
       <section>
