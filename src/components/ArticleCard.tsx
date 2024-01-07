@@ -19,9 +19,7 @@ export default function ArticleCard({
         <Image
           src={postImg}
           alt="Imagem do post"
-          className={cn("h-full object-cover md:max-h-[14.25rem]", {
-            // "max-w-[20rem]": variant === "horizontal",
-          })}
+          className={cn("h-full object-cover md:max-h-[14.25rem]")}
         />
       </div>
       <div

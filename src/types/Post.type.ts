@@ -10,5 +10,6 @@ export type Post = {
   mainImage: Image;
   categories: Category[];
   publishedAt: Date;
+  description: string;
   body: Block[];
 } & BaseSanityType;
