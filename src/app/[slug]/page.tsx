@@ -3,6 +3,16 @@ import { notFound } from "next/navigation";
 import PortableTextComponents from "~/components/PortableTextComponents";
 import { sanityQueries } from "~/services/sanityQueries";
 
+export async function generateStaticParams() {
+  const posts = await sanityQueries.allPosts();
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug.current,
+    },
+  }));
+}
+
 export default async function page({ params }: { params: { slug: string } }) {
   const post = await sanityQueries.getBySlug(params.slug);
 
